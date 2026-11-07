@@ -1,0 +1,1785 @@
+{
+ "store_id": "cinema-035",
+ "archetype": "cinema",
+ "archetype_ko": "멀티플렉스 영화관",
+ "sector": "entertainment",
+ "hours": {
+  "weekday": [
+   8.5,
+   26.0
+  ],
+  "sat": [
+   7.5,
+   27.0
+  ],
+  "sun": [
+   7.5,
+   26.0
+  ]
+ },
+ "closed_weekday": null,
+ "break_time": null,
+ "unit": "customers",
+ "daily_base": 1751.8,
+ "noise_daily_sigma": 0.132,
+ "noise_hourly_sigma": 0.111,
+ "profile_jitter": 0.233,
+ "roles": [
+  {
+   "id": "concession",
+   "ko": "매점",
+   "mode": "service",
+   "rate": 48.0,
+   "share": 0.4,
+   "min_open": 1,
+   "max": 6
+  },
+  {
+   "id": "ticket",
+   "ko": "검표·안내",
+   "mode": "service",
+   "rate": 220.9,
+   "share": 1.0,
+   "min_open": 1,
+   "max": 4
+  },
+  {
+   "id": "cleaning",
+   "ko": "상영관 정리",
+   "mode": "service",
+   "rate": 143.4,
+   "share": 1.0,
+   "min_open": 1,
+   "max": 6
+  }
+ ],
+ "templates": [
+  {
+   "template_id": "M",
+   "start": 12.5,
+   "end": 18.5,
+   "hours": 6,
+   "paid_hours": 5.5
+  },
+  {
+   "template_id": "E",
+   "start": 18.0,
+   "end": 24.0,
+   "hours": 6,
+   "paid_hours": 5.5
+  },
+  {
+   "template_id": "L",
+   "start": 20.5,
+   "end": 27.0,
+   "hours": 6.5,
+   "paid_hours": 6.0
+  },
+  {
+   "template_id": "W",
+   "start": 8.5,
+   "end": 17.5,
+   "hours": 9,
+   "paid_hours": 8.0
+  }
+ ],
+ "store_rules": {
+  "min_level2_per_open_hour": 1,
+  "max_consecutive_days": 6,
+  "key_holder_at_open_close": true,
+  "open_prep_h": 0.5,
+  "close_prep_h": 0.5
+ },
+ "owner_policy_hidden": {
+  "weight_coverage": 0.19,
+  "weight_labor_cost": 0.452,
+  "weight_staff_preference": 0.184,
+  "weight_fairness": 0.132,
+  "weight_stability": 0.042,
+  "prefers_veterans_on_weekend": true,
+  "prefers_under15h_split": false,
+  "favoritism_bias": 0.005,
+  "edit_rate": 0.164,
+  "choice_temperature": 0.36,
+  "tolerance_understaff": 0.09,
+  "note": "[가정] 실제 점주 선택 기록으로 교체/보정할 값"
+ },
+ "employees": [
+  {
+   "employee_id": "E001",
+   "persona": "night_worker",
+   "persona_ko": "야간 전담",
+   "name": "은영숙",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 2,
+    "concession": 2,
+    "ticket": 2
+   },
+   "tenure_months": 47,
+   "key_holder": false,
+   "contract_min_week_h": 39.0,
+   "target_week_h": 39.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.044,
+   "pay_type": "hourly",
+   "reliability_mult": 0.814,
+   "fairness_sensitivity": 0.717,
+   "base_quit_hazard_month": 0.05,
+   "avail_type": "night",
+   "avail_params": {
+    "start": 20.0,
+    "end": 31.0
+   },
+   "shift_prefs": {
+    "prefer_band": "night",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E002",
+   "persona": "evening_jobber",
+   "persona_ko": "직장인 투잡",
+   "name": "홍윤서",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 2
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 11.0,
+   "max_week_h": 20,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.041,
+   "pay_type": "hourly",
+   "reliability_mult": 1.498,
+   "fairness_sensitivity": 0.196,
+   "base_quit_hazard_month": 0.15,
+   "avail_type": "evening",
+   "avail_params": {
+    "weekday_start": 19.5,
+    "weekend_ok_prob": 0.82,
+    "latest_end": 24.0,
+    "overtime_at_job_prob": 0.08
+   },
+   "shift_prefs": {
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "15시간 이상 일해서 주휴수당을 받고 싶어요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E003",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "보정우",
+   "languages": [
+    "ko",
+    "en"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "ticket": 2,
+    "concession": 1
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 13.0,
+   "target_week_h": 20.0,
+   "max_week_h": 30,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.004,
+   "pay_type": "hourly",
+   "reliability_mult": 1.544,
+   "fairness_sensitivity": 0.39,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      12.0,
+      18.0
+     ],
+     "1": [
+      13.0,
+      19.5
+     ],
+     "3": [
+      10.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.56,
+    "vacation_trip_prob": 0.47,
+    "vacation_home_prob": 0.24
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 4,
+    "reason_text": "막차 때문에 마감은 어려워요"
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E004",
+   "persona": "manager",
+   "persona_ko": "점장·매니저",
+   "name": "신주원",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "ticket": 3
+   },
+   "tenure_months": 3,
+   "key_holder": true,
+   "contract_min_week_h": 40.0,
+   "target_week_h": 42.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.487,
+   "pay_type": "monthly",
+   "reliability_mult": 0.419,
+   "fairness_sensitivity": 0.285,
+   "base_quit_hazard_month": 0.01,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 6.0,
+    "end": 25.0,
+    "fixed_off": []
+   },
+   "shift_prefs": {
+    "avoid_close_streak": false,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 6,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E005",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "지주원",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 1
+   },
+   "tenure_months": 20,
+   "key_holder": false,
+   "contract_min_week_h": 15.0,
+   "target_week_h": 22.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.139,
+   "fairness_sensitivity": 0.903,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      13.0,
+      16.0
+     ],
+     "1": [
+      13.0,
+      16.0
+     ],
+     "3": [
+      9.0,
+      15.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.88,
+    "vacation_trip_prob": 0.46,
+    "vacation_home_prob": 0.14
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "수업 끝나고 바로 올 수 있는 오후가 좋아요"
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E006",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "민지유",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "cleaning": 3,
+    "concession": 1,
+    "ticket": 2
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 9.0,
+   "target_week_h": 15.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": true,
+   "wage_premium": 0.025,
+   "pay_type": "hourly",
+   "reliability_mult": 1.054,
+   "fairness_sensitivity": 0.287,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.5,
+      18.0
+     ],
+     "3": [
+      9.0,
+      15.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.72,
+    "vacation_trip_prob": 0.15,
+    "vacation_home_prob": 0.14
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 6
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E007",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "남준서",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "concession": 1
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 11.0,
+   "target_week_h": 22.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.009,
+   "pay_type": "hourly",
+   "reliability_mult": 1.823,
+   "fairness_sensitivity": 0.275,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.0,
+      13.0
+     ],
+     "1": [
+      12.0,
+      19.5
+     ],
+     "4": [
+      10.5,
+      18.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.68,
+    "vacation_trip_prob": 0.18,
+    "vacation_home_prob": 0.05
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "any",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 4,
+    "reason_text": "본업이 있어서 평일 저녁만 돼요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": [],
+   "prefer_coworkers": [
+    "E018"
+   ]
+  },
+  {
+   "employee_id": "E008",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "육예린",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "cleaning": 1,
+    "concession": 1,
+    "ticket": 1
+   },
+   "tenure_months": 8,
+   "key_holder": false,
+   "contract_min_week_h": 6.0,
+   "target_week_h": 14.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.256,
+   "fairness_sensitivity": 0.718,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.0,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E009",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "천건우",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 2,
+    "ticket": 1
+   },
+   "tenure_months": 0,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 14.0,
+   "max_week_h": 30,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.026,
+   "pay_type": "hourly",
+   "reliability_mult": 1.352,
+   "fairness_sensitivity": 0.672,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      13.0,
+      19.0
+     ],
+     "1": [
+      10.0,
+      16.0
+     ],
+     "2": [
+      10.0,
+      16.0
+     ],
+     "4": [
+      9.0,
+      15.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.0,
+    "exam_unavail_prob": 0.74,
+    "vacation_trip_prob": 0.44,
+    "vacation_home_prob": 0.27
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "야간이 시급이 좋아서 선호해요"
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E010",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "금상철",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "concession": 2,
+    "cleaning": 1
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 13.0,
+   "target_week_h": 16.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.012,
+   "pay_type": "hourly",
+   "reliability_mult": 1.299,
+   "fairness_sensitivity": 0.591,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      10.0,
+      17.5
+     ],
+     "2": [
+      9.0,
+      13.5
+     ],
+     "3": [
+      12.0,
+      18.0
+     ],
+     "4": [
+      10.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.83,
+    "vacation_trip_prob": 0.36,
+    "vacation_home_prob": 0.17
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "any",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 6
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E011",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "정선우",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "ticket": 3,
+    "concession": 1
+   },
+   "tenure_months": 5,
+   "key_holder": false,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 20.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.012,
+   "pay_type": "hourly",
+   "reliability_mult": 1.237,
+   "fairness_sensitivity": 0.233,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      12.0,
+      15.0
+     ],
+     "1": [
+      10.0,
+      13.0
+     ],
+     "4": [
+      10.0,
+      16.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.89,
+    "vacation_trip_prob": 0.4,
+    "vacation_home_prob": 0.15
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아이 하원 전까지만 가능해요"
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E012",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "신순자",
+   "languages": [
+    "ko",
+    "en"
+   ],
+   "minor": true,
+   "skills": {
+    "ticket": 1,
+    "cleaning": 1
+   },
+   "tenure_months": 3,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 11.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 2.261,
+   "fairness_sensitivity": 0.687,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.0,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아이 하원 전까지만 가능해요"
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E013",
+   "persona": "manager",
+   "persona_ko": "점장·매니저",
+   "name": "전경희",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "ticket": 3,
+    "concession": 2,
+    "cleaning": 2
+   },
+   "tenure_months": 9,
+   "key_holder": true,
+   "contract_min_week_h": 40.0,
+   "target_week_h": 44.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.444,
+   "pay_type": "monthly",
+   "reliability_mult": 0.332,
+   "fairness_sensitivity": 0.852,
+   "base_quit_hazard_month": 0.01,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 6.0,
+    "end": 24.0,
+    "fixed_off": [
+     2,
+     3
+    ]
+   },
+   "shift_prefs": {
+    "avoid_close_streak": false,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아이 하원 전까지만 가능해요"
+   },
+   "commute_min": 15,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E014",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "채현우",
+   "languages": [
+    "ko",
+    "ja"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 3,
+    "concession": 1,
+    "ticket": 1
+   },
+   "tenure_months": 0,
+   "key_holder": true,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 23.0,
+   "max_week_h": 30,
+   "max_days_week": 3,
+   "wants_juhyu": true,
+   "wage_premium": 0.01,
+   "pay_type": "hourly",
+   "reliability_mult": 0.871,
+   "fairness_sensitivity": 0.24,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      12.0,
+      15.0
+     ],
+     "3": [
+      9.0,
+      13.5
+     ],
+     "4": [
+      9.0,
+      16.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.82,
+    "vacation_trip_prob": 0.06,
+    "vacation_home_prob": 0.02
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "수업 끝나고 바로 올 수 있는 오후가 좋아요"
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E015",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "편태민",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "ticket": 3,
+    "cleaning": 2
+   },
+   "tenure_months": 6,
+   "key_holder": false,
+   "contract_min_week_h": 14.0,
+   "target_week_h": 17.0,
+   "max_week_h": 30,
+   "max_days_week": 4,
+   "wants_juhyu": false,
+   "wage_premium": 0.014,
+   "pay_type": "hourly",
+   "reliability_mult": 1.104,
+   "fairness_sensitivity": 0.631,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.0,
+      14.5
+     ],
+     "1": [
+      10.0,
+      17.5
+     ],
+     "2": [
+      12.0,
+      15.0
+     ],
+     "3": [
+      9.0,
+      13.5
+     ]
+    },
+    "weekend_ok": false,
+    "latest_end": 24.0,
+    "exam_unavail_prob": 0.83,
+    "vacation_trip_prob": 0.49,
+    "vacation_home_prob": 0.22
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E016",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "서소연",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "ticket": 1,
+    "cleaning": 1
+   },
+   "tenure_months": 11,
+   "key_holder": false,
+   "contract_min_week_h": 6.0,
+   "target_week_h": 14.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.228,
+   "fairness_sensitivity": 0.095,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 17.0,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "any",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E017",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "홍우진",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "concession": 1,
+    "cleaning": 1
+   },
+   "tenure_months": 5,
+   "key_holder": false,
+   "contract_min_week_h": 15.0,
+   "target_week_h": 20.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.029,
+   "pay_type": "hourly",
+   "reliability_mult": 1.035,
+   "fairness_sensitivity": 0.74,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      13.0,
+      19.0
+     ],
+     "2": [
+      10.0,
+      13.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.8,
+    "vacation_trip_prob": 0.43,
+    "vacation_home_prob": 0.24
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "any",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 4
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E018",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "도태민",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "concession": 3,
+    "ticket": 1
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 9.0,
+   "target_week_h": 19.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.03,
+   "pay_type": "hourly",
+   "reliability_mult": 1.635,
+   "fairness_sensitivity": 0.835,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      12.0,
+      15.0
+     ],
+     "2": [
+      13.0,
+      16.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.5,
+    "exam_unavail_prob": 0.77,
+    "vacation_trip_prob": 0.15,
+    "vacation_home_prob": 0.1
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 4,
+    "reason_text": "막차 때문에 마감은 어려워요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E019",
+   "persona": "night_worker",
+   "persona_ko": "야간 전담",
+   "name": "어정우",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 3,
+    "concession": 2,
+    "ticket": 1
+   },
+   "tenure_months": 15,
+   "key_holder": true,
+   "contract_min_week_h": 38.0,
+   "target_week_h": 36.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.014,
+   "pay_type": "hourly",
+   "reliability_mult": 0.637,
+   "fairness_sensitivity": 0.263,
+   "base_quit_hazard_month": 0.05,
+   "avail_type": "night",
+   "avail_params": {
+    "start": 20.0,
+    "end": 31.0
+   },
+   "shift_prefs": {
+    "prefer_band": "night",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "야간이 시급이 좋아서 선호해요"
+   },
+   "commute_min": 15,
+   "avoid_coworkers": [
+    "E021"
+   ]
+  },
+  {
+   "employee_id": "E020",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "홍하은",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "ticket": 1,
+    "cleaning": 1
+   },
+   "tenure_months": 0,
+   "key_holder": false,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 13.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 4,
+   "wants_juhyu": false,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 0.974,
+   "fairness_sensitivity": 0.399,
+   "base_quit_hazard_month": 0.3,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.5,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "연속 근무는 체력적으로 힘들어요"
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E021",
+   "persona": "manager",
+   "persona_ko": "점장·매니저",
+   "name": "공은우",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "cleaning": 3,
+    "ticket": 2
+   },
+   "tenure_months": 47,
+   "key_holder": true,
+   "contract_min_week_h": 40.0,
+   "target_week_h": 43.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.369,
+   "pay_type": "monthly",
+   "reliability_mult": 0.455,
+   "fairness_sensitivity": 0.588,
+   "base_quit_hazard_month": 0.01,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 7.0,
+    "end": 24.0,
+    "fixed_off": [
+     5,
+     2
+    ]
+   },
+   "shift_prefs": {
+    "avoid_close_streak": true,
+    "prefer_band": "morning",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 15,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E022",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "천현철",
+   "languages": [
+    "ko",
+    "zh"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "cleaning": 1,
+    "ticket": 2,
+    "concession": 1
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 14.0,
+   "target_week_h": 20.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": true,
+   "wage_premium": 0.02,
+   "pay_type": "hourly",
+   "reliability_mult": 1.735,
+   "fairness_sensitivity": 0.457,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      13.0,
+      16.0
+     ],
+     "1": [
+      9.0,
+      13.5
+     ],
+     "3": [
+      10.5,
+      18.0
+     ],
+     "4": [
+      13.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.9,
+    "vacation_trip_prob": 0.35,
+    "vacation_home_prob": 0.26
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "야간이 시급이 좋아서 선호해요"
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E023",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "반도윤",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "ticket": 1,
+    "cleaning": 1
+   },
+   "tenure_months": 3,
+   "key_holder": false,
+   "contract_min_week_h": 15.0,
+   "target_week_h": 13.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": false,
+   "wage_premium": 0.023,
+   "pay_type": "hourly",
+   "reliability_mult": 1.784,
+   "fairness_sensitivity": 0.44,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      13.0,
+      19.5
+     ],
+     "2": [
+      13.0,
+      16.0
+     ],
+     "3": [
+      9.0,
+      12.0
+     ],
+     "4": [
+      13.0,
+      19.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.57,
+    "vacation_trip_prob": 0.19,
+    "vacation_home_prob": 0.15
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "야간이 시급이 좋아서 선호해요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": [],
+   "prefer_coworkers": [
+    "E013"
+   ]
+  },
+  {
+   "employee_id": "E024",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "나보람",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 3,
+    "concession": 2
+   },
+   "tenure_months": 7,
+   "key_holder": false,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 23.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.029,
+   "pay_type": "hourly",
+   "reliability_mult": 2.788,
+   "fairness_sensitivity": 0.671,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.0,
+      17.5
+     ],
+     "2": [
+      12.0,
+      15.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.6,
+    "vacation_trip_prob": 0.49,
+    "vacation_home_prob": 0.13
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E025",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "탁예린",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "concession": 2,
+    "ticket": 2
+   },
+   "tenure_months": 6,
+   "key_holder": false,
+   "contract_min_week_h": 12.0,
+   "target_week_h": 21.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.024,
+   "pay_type": "hourly",
+   "reliability_mult": 1.662,
+   "fairness_sensitivity": 0.412,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.0,
+      13.0
+     ],
+     "1": [
+      9.0,
+      13.5
+     ],
+     "2": [
+      9.0,
+      12.0
+     ],
+     "3": [
+      10.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.5,
+    "exam_unavail_prob": 0.76,
+    "vacation_trip_prob": 0.13,
+    "vacation_home_prob": 0.04
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3
+   },
+   "commute_min": 60,
+   "avoid_coworkers": [
+    "E030"
+   ]
+  },
+  {
+   "employee_id": "E026",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "부나연",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "cleaning": 1
+   },
+   "tenure_months": 5,
+   "key_holder": false,
+   "contract_min_week_h": 7.0,
+   "target_week_h": 13.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 2.253,
+   "fairness_sensitivity": 0.69,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 17.0,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E027",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "은건우",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "cleaning": 1
+   },
+   "tenure_months": 8,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 14.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 2.257,
+   "fairness_sensitivity": 0.695,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.5,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 4,
+    "reason_text": "15시간 이상 일해서 주휴수당을 받고 싶어요"
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E028",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "나재현",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "cleaning": 1,
+    "ticket": 1
+   },
+   "tenure_months": 0,
+   "key_holder": false,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 11.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 5,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.268,
+   "fairness_sensitivity": 0.254,
+   "base_quit_hazard_month": 0.3,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.5,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E029",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "육미경",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "ticket": 2,
+    "cleaning": 2
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 9.0,
+   "target_week_h": 21.0,
+   "max_week_h": 30,
+   "max_days_week": 3,
+   "wants_juhyu": false,
+   "wage_premium": 0.022,
+   "pay_type": "hourly",
+   "reliability_mult": 1.064,
+   "fairness_sensitivity": 0.608,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      13.0,
+      19.5
+     ],
+     "2": [
+      13.0,
+      19.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.0,
+    "exam_unavail_prob": 0.53,
+    "vacation_trip_prob": 0.45,
+    "vacation_home_prob": 0.11
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아이 하원 전까지만 가능해요"
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E030",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "천예린",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "cleaning": 1,
+    "concession": 1
+   },
+   "tenure_months": 3,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 9.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.656,
+   "fairness_sensitivity": 0.476,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.5,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "시간을 더 받고 싶어요"
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E031",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "엄태윤",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "concession": 1,
+    "ticket": 1
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 6.0,
+   "target_week_h": 12.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 3,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.07,
+   "fairness_sensitivity": 0.915,
+   "base_quit_hazard_month": 0.3,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.5,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아이 하원 전까지만 가능해요"
+   },
+   "commute_min": 40,
+   "avoid_coworkers": [
+    "E021"
+   ]
+  },
+  {
+   "employee_id": "E032",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "나예린",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cleaning": 2,
+    "ticket": 1,
+    "concession": 2
+   },
+   "tenure_months": 5,
+   "key_holder": false,
+   "contract_min_week_h": 15.0,
+   "target_week_h": 22.0,
+   "max_week_h": 30,
+   "max_days_week": 3,
+   "wants_juhyu": false,
+   "wage_premium": 0.003,
+   "pay_type": "hourly",
+   "reliability_mult": 1.029,
+   "fairness_sensitivity": 0.662,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      9.0,
+      15.0
+     ],
+     "2": [
+      10.5,
+      16.5
+     ],
+     "3": [
+      12.0,
+      19.5
+     ],
+     "4": [
+      13.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.57,
+    "vacation_trip_prob": 0.3,
+    "vacation_home_prob": 0.01
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3
+   },
+   "commute_min": 15,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E033",
+   "persona": "manager",
+   "persona_ko": "점장·매니저",
+   "name": "반유나",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "ticket": 3,
+    "cleaning": 2
+   },
+   "tenure_months": 1,
+   "key_holder": true,
+   "contract_min_week_h": 40.0,
+   "target_week_h": 43.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.548,
+   "pay_type": "monthly",
+   "reliability_mult": 0.438,
+   "fairness_sensitivity": 0.639,
+   "base_quit_hazard_month": 0.02,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 8.0,
+    "end": 23.0,
+    "fixed_off": [
+     5,
+     1
+    ]
+   },
+   "shift_prefs": {
+    "avoid_close_streak": true,
+    "prefer_band": "morning",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "연속 근무는 체력적으로 힘들어요"
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  }
+ ],
+ "reference_weekly_req_h": 469.2,
+ "staffing_tightness_target": 1.392
+}

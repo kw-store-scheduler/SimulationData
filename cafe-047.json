@@ -1,0 +1,845 @@
+{
+ "store_id": "cafe-047",
+ "archetype": "cafe",
+ "archetype_ko": "카페(프랜차이즈·개인)",
+ "sector": "fnb",
+ "hours": {
+  "weekday": [
+   5.5,
+   22.5
+  ],
+  "sat": [
+   6.5,
+   22.5
+  ],
+  "sun": [
+   7.5,
+   22.5
+  ]
+ },
+ "closed_weekday": null,
+ "break_time": null,
+ "unit": "customers",
+ "daily_base": 446.3,
+ "noise_daily_sigma": 0.092,
+ "noise_hourly_sigma": 0.17,
+ "profile_jitter": 0.06,
+ "roles": [
+  {
+   "id": "barista",
+   "ko": "바리스타",
+   "mode": "service",
+   "rate": 34.4,
+   "share": 1.0,
+   "min_open": 1,
+   "max": 5
+  },
+  {
+   "id": "cashier",
+   "ko": "주문·서빙",
+   "mode": "service",
+   "rate": 65.8,
+   "share": 1.0,
+   "min_open": 1,
+   "max": 3
+  }
+ ],
+ "templates": [
+  {
+   "template_id": "O",
+   "start": 7.0,
+   "end": 13.5,
+   "hours": 6.5,
+   "paid_hours": 6.0
+  },
+  {
+   "template_id": "M",
+   "start": 10.0,
+   "end": 16.0,
+   "hours": 6,
+   "paid_hours": 5.5
+  },
+  {
+   "template_id": "D",
+   "start": 8.0,
+   "end": 17.0,
+   "hours": 9,
+   "paid_hours": 8.0
+  },
+  {
+   "template_id": "A",
+   "start": 12.5,
+   "end": 18.5,
+   "hours": 6,
+   "paid_hours": 5.5
+  },
+  {
+   "template_id": "S",
+   "start": 11.5,
+   "end": 15.5,
+   "hours": 4,
+   "paid_hours": 4
+  }
+ ],
+ "store_rules": {
+  "min_level2_per_open_hour": 1,
+  "max_consecutive_days": 6,
+  "key_holder_at_open_close": true,
+  "open_prep_h": 0.5,
+  "close_prep_h": 0.5
+ },
+ "owner_policy_hidden": {
+  "weight_coverage": 0.317,
+  "weight_labor_cost": 0.137,
+  "weight_staff_preference": 0.236,
+  "weight_fairness": 0.282,
+  "weight_stability": 0.028,
+  "prefers_veterans_on_weekend": false,
+  "prefers_under15h_split": false,
+  "favoritism_bias": 0.188,
+  "edit_rate": 0.084,
+  "choice_temperature": 1.96,
+  "tolerance_understaff": 0.17,
+  "note": "[가정] 실제 점주 선택 기록으로 교체/보정할 값"
+ },
+ "employees": [
+  {
+   "employee_id": "E001",
+   "persona": "homemaker",
+   "persona_ko": "주부 파트타임",
+   "name": "공현철",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "barista": 3,
+    "cashier": 1
+   },
+   "tenure_months": 5,
+   "key_holder": false,
+   "contract_min_week_h": 18.0,
+   "target_week_h": 22.0,
+   "max_week_h": 32,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.037,
+   "pay_type": "hourly",
+   "reliability_mult": 0.761,
+   "fairness_sensitivity": 0.117,
+   "base_quit_hazard_month": 0.03,
+   "avail_type": "daytime",
+   "avail_params": {
+    "start": 9.0,
+    "end": 15.0,
+    "weekend_ok_prob": 0.22,
+    "school_vac_reduce": 0.58
+   },
+   "shift_prefs": {
+    "avoid_weekend": true,
+    "avoid_close": true,
+    "prefer_band": "morning",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E002",
+   "persona": "fulltime",
+   "persona_ko": "전일제 직원",
+   "name": "김하준",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "barista": 3
+   },
+   "tenure_months": 31,
+   "key_holder": false,
+   "contract_min_week_h": 35.0,
+   "target_week_h": 40.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.178,
+   "pay_type": "monthly",
+   "reliability_mult": 0.441,
+   "fairness_sensitivity": 0.287,
+   "base_quit_hazard_month": 0.03,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 8.0,
+    "end": 25.0,
+    "fixed_off": [
+     5
+    ]
+   },
+   "shift_prefs": {
+    "avoid_close_streak": false,
+    "prefer_band": "morning",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 6
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E003",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "이윤서",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "barista": 3,
+    "cashier": 2
+   },
+   "tenure_months": 6,
+   "key_holder": false,
+   "contract_min_week_h": 9.0,
+   "target_week_h": 13.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": true,
+   "wage_premium": 0.022,
+   "pay_type": "hourly",
+   "reliability_mult": 1.712,
+   "fairness_sensitivity": 0.202,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      9.0,
+      16.5
+     ],
+     "4": [
+      12.0,
+      19.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.5,
+    "exam_unavail_prob": 0.79,
+    "vacation_trip_prob": 0.04,
+    "vacation_home_prob": 0.04
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "막차 때문에 마감은 어려워요"
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E004",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "한다은",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "barista": 1,
+    "cashier": 2
+   },
+   "tenure_months": 2,
+   "key_holder": true,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 22.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.012,
+   "pay_type": "hourly",
+   "reliability_mult": 1.269,
+   "fairness_sensitivity": 0.839,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      9.0,
+      12.0
+     ],
+     "1": [
+      12.0,
+      19.5
+     ],
+     "2": [
+      13.0,
+      19.5
+     ],
+     "4": [
+      9.0,
+      12.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.68,
+    "vacation_trip_prob": 0.4,
+    "vacation_home_prob": 0.08
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "afternoon",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E005",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "옥가은",
+   "languages": [
+    "ko",
+    "en"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "barista": 3,
+    "cashier": 2
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 13.0,
+   "target_week_h": 23.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": true,
+   "wage_premium": 0.015,
+   "pay_type": "hourly",
+   "reliability_mult": 0.745,
+   "fairness_sensitivity": 0.353,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "3": [
+      12.0,
+      18.0
+     ],
+     "4": [
+      10.0,
+      17.5
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 23.5,
+    "exam_unavail_prob": 0.79,
+    "vacation_trip_prob": 0.33,
+    "vacation_home_prob": 0.24
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3
+   },
+   "commute_min": 10,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E006",
+   "persona": "manager",
+   "persona_ko": "점장·매니저",
+   "name": "송다은",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "cashier": 3,
+    "barista": 2
+   },
+   "tenure_months": 45,
+   "key_holder": true,
+   "contract_min_week_h": 40.0,
+   "target_week_h": 42.0,
+   "max_week_h": 52,
+   "max_days_week": 6,
+   "wants_juhyu": true,
+   "wage_premium": 0.581,
+   "pay_type": "monthly",
+   "reliability_mult": 0.414,
+   "fairness_sensitivity": 0.471,
+   "base_quit_hazard_month": 0.01,
+   "avail_type": "wide",
+   "avail_params": {
+    "start": 6.0,
+    "end": 24.0,
+    "fixed_off": []
+   },
+   "shift_prefs": {
+    "avoid_close_streak": false,
+    "prefer_band": "morning",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3
+   },
+   "commute_min": 40,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E007",
+   "persona": "teen",
+   "persona_ko": "연소근로자(만 16~17세)",
+   "name": "도정숙",
+   "languages": [
+    "ko"
+   ],
+   "minor": true,
+   "skills": {
+    "barista": 1,
+    "cashier": 1
+   },
+   "tenure_months": 9,
+   "key_holder": false,
+   "contract_min_week_h": 10.0,
+   "target_week_h": 13.0,
+   "max_week_h": 35,
+   "max_day_h": 7,
+   "guardian_consent": true,
+   "max_days_week": 3,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.827,
+   "fairness_sensitivity": 0.149,
+   "base_quit_hazard_month": 0.12,
+   "avail_type": "teen",
+   "avail_params": {
+    "school_end": 16.0,
+    "weekend_ok": true
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "수업 끝나고 바로 올 수 있는 오후가 좋아요"
+   },
+   "commute_min": 15,
+   "avoid_coworkers": [],
+   "prefer_coworkers": [
+    "E004"
+   ]
+  },
+  {
+   "employee_id": "E008",
+   "persona": "homemaker",
+   "persona_ko": "주부 파트타임",
+   "name": "황수빈",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "skills": {
+    "cashier": 2,
+    "barista": 1
+   },
+   "tenure_months": 37,
+   "key_holder": false,
+   "contract_min_week_h": 21.0,
+   "target_week_h": 23.0,
+   "max_week_h": 32,
+   "max_days_week": 6,
+   "wants_juhyu": false,
+   "wage_premium": 0.075,
+   "pay_type": "hourly",
+   "reliability_mult": 0.898,
+   "fairness_sensitivity": 0.338,
+   "base_quit_hazard_month": 0.03,
+   "avail_type": "daytime",
+   "avail_params": {
+    "start": 9.5,
+    "end": 16.0,
+    "weekend_ok_prob": 0.28,
+    "school_vac_reduce": 0.49
+   },
+   "shift_prefs": {
+    "avoid_weekend": true,
+    "avoid_close": true,
+    "prefer_band": "morning",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 4
+   },
+   "commute_min": 40,
+   "avoid_coworkers": [],
+   "prefer_coworkers": [
+    "E010"
+   ]
+  },
+  {
+   "employee_id": "E009",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "노경희",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "barista": 3
+   },
+   "tenure_months": 4,
+   "key_holder": false,
+   "contract_min_week_h": 11.0,
+   "target_week_h": 13.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.015,
+   "pay_type": "hourly",
+   "reliability_mult": 1.902,
+   "fairness_sensitivity": 0.668,
+   "base_quit_hazard_month": 0.08,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "2": [
+      10.5,
+      13.5
+     ],
+     "4": [
+      13.0,
+      16.0
+     ]
+    },
+    "weekend_ok": false,
+    "latest_end": 23.0,
+    "exam_unavail_prob": 0.82,
+    "vacation_trip_prob": 0.34,
+    "vacation_home_prob": 0.07
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "야간이 시급이 좋아서 선호해요"
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E010",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "공하은",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cashier": 3,
+    "barista": 2
+   },
+   "tenure_months": 2,
+   "key_holder": false,
+   "contract_min_week_h": 14.0,
+   "target_week_h": 13.0,
+   "max_week_h": 30,
+   "max_days_week": 3,
+   "wants_juhyu": true,
+   "wage_premium": 0.0,
+   "pay_type": "hourly",
+   "reliability_mult": 1.696,
+   "fairness_sensitivity": 0.804,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      13.0,
+      17.5
+     ],
+     "2": [
+      12.0,
+      16.5
+     ],
+     "3": [
+      10.0,
+      17.5
+     ],
+     "4": [
+      9.0,
+      12.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.94,
+    "vacation_trip_prob": 0.12,
+    "vacation_home_prob": 0.04
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E011",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "봉재현",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "cashier": 3,
+    "barista": 2
+   },
+   "tenure_months": 0,
+   "key_holder": false,
+   "contract_min_week_h": 13.0,
+   "target_week_h": 21.0,
+   "max_week_h": 30,
+   "max_days_week": 5,
+   "wants_juhyu": false,
+   "wage_premium": 0.013,
+   "pay_type": "hourly",
+   "reliability_mult": 1.244,
+   "fairness_sensitivity": 0.302,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      10.0,
+      17.5
+     ],
+     "1": [
+      12.0,
+      19.5
+     ],
+     "4": [
+      12.0,
+      15.0
+     ]
+    },
+    "weekend_ok": false,
+    "latest_end": 24.0,
+    "exam_unavail_prob": 0.57,
+    "vacation_trip_prob": 0.02,
+    "vacation_home_prob": 0.3
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "any",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "수업 끝나고 바로 올 수 있는 오후가 좋아요"
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E012",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "심서윤",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": false,
+   "skills": {
+    "barista": 3
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 12.0,
+   "target_week_h": 23.0,
+   "max_week_h": 30,
+   "max_days_week": 4,
+   "wants_juhyu": false,
+   "wage_premium": 0.007,
+   "pay_type": "hourly",
+   "reliability_mult": 1.579,
+   "fairness_sensitivity": 0.569,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      9.0,
+      15.0
+     ],
+     "2": [
+      9.0,
+      16.5
+     ],
+     "3": [
+      13.0,
+      16.0
+     ],
+     "4": [
+      10.5,
+      18.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.5,
+    "exam_unavail_prob": 0.69,
+    "vacation_trip_prob": 0.25,
+    "vacation_home_prob": 0.02
+   },
+   "shift_prefs": {
+    "avoid_open": false,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 6,
+    "reason_text": "막차 때문에 마감은 어려워요"
+   },
+   "commute_min": 20,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E013",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "추유나",
+   "languages": [
+    "ko"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "barista": 2
+   },
+   "tenure_months": 0,
+   "key_holder": false,
+   "contract_min_week_h": 8.0,
+   "target_week_h": 23.0,
+   "max_week_h": 30,
+   "max_days_week": 6,
+   "wants_juhyu": false,
+   "wage_premium": 0.01,
+   "pay_type": "hourly",
+   "reliability_mult": 1.728,
+   "fairness_sensitivity": 0.815,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "1": [
+      9.0,
+      16.5
+     ],
+     "2": [
+      9.0,
+      12.0
+     ],
+     "4": [
+      12.0,
+      15.0
+     ]
+    },
+    "weekend_ok": false,
+    "latest_end": 23.5,
+    "exam_unavail_prob": 0.66,
+    "vacation_trip_prob": 0.3,
+    "vacation_home_prob": 0.02
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "any",
+    "avoid_split_shift": false,
+    "max_consecutive_days_pref": 3,
+    "reason_text": "아침잠이 많아서 오픈은 힘들어요"
+   },
+   "commute_min": 30,
+   "avoid_coworkers": []
+  },
+  {
+   "employee_id": "E014",
+   "persona": "univ_student",
+   "persona_ko": "대학생 알바",
+   "name": "김재현",
+   "languages": [
+    "ko",
+    "en"
+   ],
+   "minor": false,
+   "reservist": true,
+   "skills": {
+    "cashier": 3,
+    "barista": 2
+   },
+   "tenure_months": 1,
+   "key_holder": false,
+   "contract_min_week_h": 15.0,
+   "target_week_h": 20.0,
+   "max_week_h": 30,
+   "max_days_week": 4,
+   "wants_juhyu": true,
+   "wage_premium": 0.008,
+   "pay_type": "hourly",
+   "reliability_mult": 1.841,
+   "fairness_sensitivity": 0.498,
+   "base_quit_hazard_month": 0.22,
+   "avail_type": "student",
+   "avail_params": {
+    "class_blocks": {
+     "0": [
+      9.0,
+      16.5
+     ],
+     "1": [
+      13.0,
+      19.5
+     ],
+     "2": [
+      10.5,
+      16.5
+     ],
+     "3": [
+      10.0,
+      13.0
+     ]
+    },
+    "weekend_ok": true,
+    "latest_end": 24.0,
+    "exam_unavail_prob": 0.65,
+    "vacation_trip_prob": 0.08,
+    "vacation_home_prob": 0.1
+   },
+   "shift_prefs": {
+    "avoid_open": true,
+    "prefer_band": "evening",
+    "avoid_split_shift": true,
+    "max_consecutive_days_pref": 5
+   },
+   "commute_min": 60,
+   "avoid_coworkers": []
+  }
+ ],
+ "reference_weekly_req_h": 278.8,
+ "staffing_tightness_target": 1.088
+}
